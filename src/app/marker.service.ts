@@ -12,6 +12,7 @@ export class MarkerService {
   constructor(private http:HttpClient) { }
   
   capitals:string = `../assets/data/usa-capitals.geojson`;
+  random:string = `../assets/data/europe.geojson`
 
   ongetData():Observable<any>{
     return this.http.get(`../assets/data/products.json`)
@@ -40,4 +41,19 @@ export class MarkerService {
     `<div>State: ${ data.state }</div>` +
     `<div>Population: ${ data.population }</div>`
   }
+
+
+  makeCircleMarkers(map: L.Map): void { 
+
+    this.http.get(this.random).subscribe((res: any) => {
+      for (const c of res.features) {
+        const lon = c.geometry.coordinates[0];
+        const lat = c.geometry.coordinates[1];
+        const marker = L.circleMarker([lat, lon]);
+        marker.bindPopup(this.makeCapitalPopup(c.properties))
+        marker.addTo(map);
+      }
+    });
+  }
 }
+

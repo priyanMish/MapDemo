@@ -53,5 +53,6 @@ export class MapComponent implements AfterViewInit {
       console.log(res,"Data2")
     })
     this.markerService.makeCapitalMarkers(this.map);
+    this.markerService.makeCircleMarkers(this.map)
   }
 }
