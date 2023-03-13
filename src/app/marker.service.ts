@@ -28,9 +28,16 @@ export class MarkerService {
         const lon = c.geometry.coordinates[0];
         const lat = c.geometry.coordinates[1];
         const marker = L.marker([lat, lon]);
-        
+        marker.bindPopup(this.makeCapitalPopup(c.properties))
         marker.addTo(map);
       }
     });
+  }
+
+  makeCapitalPopup(data: any): string { 
+    return `` +
+    `<div>Capital: ${ data.name }</div>` +
+    `<div>State: ${ data.state }</div>` +
+    `<div>Population: ${ data.population }</div>`
   }
 }
