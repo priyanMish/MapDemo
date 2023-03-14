@@ -1,3 +1,18 @@
-<app-map></app-map>
 
+<div class="button-container">
+  <button (click)="onToggle()" class="btn">Show Bar Chart</button>
+  <button (click)="onToggleLine()" class="btn">Show Line Chart</button>
+  <button (click)="onToggleMap()" class="btn">Show Map</button>
+</div>
 
+<div *ngIf="!showChart && !showLine"> 
+  <app-map></app-map>
+</div>
+
+<div *ngIf="showChart">
+  <app-bar-chart></app-bar-chart>
+</div>
+
+<div *ngIf="showLine">
+  <app-line-chart></app-line-chart>
+</div>

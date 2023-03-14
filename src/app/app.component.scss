@@ -1,0 +1,21 @@
+.btn{
+    height: 48px;
+    width: 250px;
+    padding: 8px;
+    text-align: center;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    background-color: rgb(58, 1, 58);
+    color: antiquewhite;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 800;
+    border-radius: 8px;
+
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-around;
+}

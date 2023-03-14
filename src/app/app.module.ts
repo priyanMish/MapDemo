@@ -5,11 +5,15 @@ import { MarkerService } from './marker.service';
 
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { LineChartComponent } from './line-chart/line-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MapComponent
+    MapComponent,
+    BarChartComponent,
+    LineChartComponent
   ],
   imports: [
     BrowserModule,
